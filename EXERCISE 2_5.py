@@ -19,24 +19,19 @@ print("Number of words: ", count_word)
 
 #(3)
 
-longest_word = len(max(words, key=len))
-result = [textword for textword in words if len(textword) == longest_word]
-print("The longest word: ", result)
+longest_word = (max(words, key=len))
+print("The longest word: ", longest_word)
 
 #(5.1)
 
-print("Sort words according to the lexicographic:")
-def sort_lexo(S):
-     words.sort()
-     for i in words:
-          print (i)
-if __name__ == '__main__':
+print("Words sorted by lexicographic order:")
+sort_lexo = sorted(words)
 
-     sort_lexo(S)
+print(sort_lexo)
 
 #(5.2)
 
-print("Sort words according to the length:")
+print("Words sorted by length:")
 sort_length = sorted(words, key=len)
 
 print(sort_length)
