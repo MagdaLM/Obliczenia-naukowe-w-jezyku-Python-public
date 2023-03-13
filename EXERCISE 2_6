@@ -1,0 +1,12 @@
+t = (2, 4)
+print(t[2])
+IndexError: tuple index out of range
+Błąd wystąpił, ponieważ próbowano uzyskać dostęp do trzeciego elementu krotki t za pomocą składni t[2], ale krotka ma tylko dwa elementy indeksowane jako 0 i 1.
+
+t.append(6)
+AttributeError: 'tuple' object has no attribute 'append'
+Nie możemy dodać elementu do krotki za pomocą metody append, ponieważ krotki są niezmienne w Pythonie. 
+
+a, b = t ; print(a, b)
+2 4 
+Ponieważ krotka t ma dwa elementy, zarówno a, jak i b zostaną przypisane wartości z krotki. Wartości przypisane a i b to odpowiednio 2 i 4.
