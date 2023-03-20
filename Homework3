@@ -1,14 +1,12 @@
 EXERCISE 3.1
 
 word = input("Enter word: ")
-
 length = len(word)
 print("+" + "---+" * length)
 for letter in word:
     print("| " + letter + " ", end="")
 print("|")
 print("+" + "---+" * length)
-
 input("Press any key ...")
 
 EXERCISE 3.2
@@ -16,7 +14,6 @@ EXERCISE 3.2
 # solution with 'while' loops
 
 x = 1
-
 while x <= 40:
     if x == 13:
         x += 1
@@ -45,3 +42,17 @@ for x in range(1, 41):
     else:
         print(x, 'is not important')
 
+EXERCISE 3.3
+
+n = 2022
+import math
+x = format(math.pi, '.5f')
+word = "Python"
+polish = "książka"
+with open("vars.txt", "w") as file:
+    file.write(f"{n}\n")
+    file.write(f"{x}\n")
+    file.write(f"{word}\n")
+    file.write(f"{polish}\n")
+with open("vars.txt", "r") as file:
+    print(file.read())
