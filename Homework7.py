@@ -1,65 +1,51 @@
-print ("EXERCISE 7.1")
-def find_axis(v1, v2):
-    
-    v3 = [v1[1]*v2[2] - v1[2]*v2[1],
-          v1[2]*v2[0] - v1[0]*v2[2],
-          v1[0]*v2[1] - v1[1]*v2[0]]
+print ("EXERCISE 8.1")
 
-    if sum([abs(x) for x in v3]) == 0:
-        raise ValueError("vectors are parallel")
+print ("(a)")
+import numpy as np
+a = np.arange(0.0, 1.1, 0.1, dtype=np.float64)
+print(a)
 
-    v3_normalize = sum([x**2 for x in v3])**0.5
+print ("(b)")
+b = np.zeros((5, 6), dtype=np.int8)
+print(b)
 
-    v3_unit_vector = [x/v3_normalize for x in v3]
+print ("(c)")
+x = complex(0, 1)
+c = x ** np.arange(9)
+print(c)
 
-    return v3_unit_vector
+print ("EXERCISE 8.2")
 
-v = [-1, 2, -3]
-w = [3, -1, 2]
+print ("(a)")
+v1 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(v1)
 
-v3 = find_axis(v, w)
+print ("(b)")
+v2 = v1[1::2]
+print(v2)
+
+print ("(c)")
+v3 = v1[::-1]
 print(v3)
 
-print ("EXERCISE 7.2")
-print("(a)infinite iterator returning 0, 1, 0, 1, 0, 1, ...")
+print ("EXERCISE 8.3")
+import numpy as np
 
-def zero_one_alternately():
-    while True:
-        yield 0
-        yield 1
-a = zero_one_alternately()
+print ("(a)")
+m1 = np.array([[ 1,  2,  3,  4,  5],
+               [ 6,  7,  8,  9, 10],
+               [11, 12, 13, 14, 15],
+               [16, 17, 18, 19, 20]])
+print(m1)
 
-print(next(a))
-print(next(a))
-print(next(a))
-print(next(a))
+print ("(b)")
+m2 = np.flip(m1, axis=1)
+print(m2)
 
-print("(b)infinite iterator returning randomly 0 or 1 on demand")
+print ("(c)")
+m3 = np.flip(m1, axis=0)
+print(m3)
 
-import random
-
-def zero_one_randomly():
-    while True:
-        yield random.randint(0, 1)
-
-b = zero_one_randomly()
-
-print(next(b))
-print(next(b))
-print(next(b))
-print(next(b))
-
-print("(c)infinite iterator returning 0, 1, 0, -1, 0, 1, 0, -1, ...")
-
-def zero_one_negative_one():
-    values = [0, 1, 0, -1]
-    while True:
-        for value in values:
-            yield value
-
-c = zero_one_negative_one()
-
-print(next(c))
-print(next(c))
-print(next(c))
-print(next(c))
+print ("(d)")
+m4 = m1[1:-1, 1:-1]
+print(m4)
